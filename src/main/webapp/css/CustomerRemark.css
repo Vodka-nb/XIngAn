@@ -1,0 +1,45 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 账单总表格 */
+#ReviewBox{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    height: 800px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+/* 评价框大小 */
+#Review{
+    position: relative;
+    min-height: 300px;
+    height: auto;
+    line-height: 20px;
+    resize: vertical;
+    padding: 6px 10px;
+    border: 2px solid beige;
+    box-shadow: 2px 2px rgb(154, 144, 144);
+}
+
+/* 订单编号框大小 */
+#OrderId{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    min-height: 20px;
+    height:10px;
+    line-height: 10px;
+    resize: vertical;
+    padding: 6px 10px;
+    border: 2px solid beige;
+    box-shadow: 2px 2px rgb(154, 144, 144);
+}

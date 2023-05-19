@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.ServerInfoMapper">
+
+    <insert id="AddServerInfo" parameterType="com.vodka.PJO.ServerInfo">
+         INSERT INTO serverinfo
+        VALUES(#{serverID},#{serverName},#{serverPhone},#{serverSex},#{serverRemark},#{passWord})
+    </insert>
+
+    <update id="EditServerInfo" parameterType="com.vodka.PJO.ServerInfo" >
+        UPDATE   serverinfo
+       SET  serverName =#{serverName},serverPhone = #{serverPhone},serverSex=#{serverSex},serverRemark=#{serverRemark}
+       WHERE serverID =#{serverID}
+    </update>
+
+    <update id="EditServerPassWord" parameterType="com.vodka.PJO.ServerInfo" >
+        UPDATE   serverinfo
+       SET  passWord =#{passWord}
+       WHERE serverID =#{serverID}
+    </update>
+
+    <delete id="DeleteServerInfo">
+        delete from serverinfo
+        where serverID = #{ServerID}
+    </delete>
+
+
+    <select id="GetAllServer" resultType="com.vodka.PJO.ServerInfo" flushCache="true" >
+          select * from serverinfo
+    </select>
+
+
+    <select id="SearchServerInfo" resultType="com.vodka.PJO.ServerInfo" flushCache="true" >
+        select * from serverinfo
+        where serverID = #{ServerNum} or serverPhone = #{ServerNum}
+    </select>
+
+
+</mapper>

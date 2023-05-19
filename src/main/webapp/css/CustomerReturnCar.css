@@ -1,0 +1,45 @@
+body{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 订车界面大盒子 */
+#ReturnCarDisplay{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1435px;
+    height: 1110px;
+    overflow: hidden ;
+}
+
+/* 车辆展示 */
+#ReturnCar{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    margin-top:20px;
+    margin-left:120px;
+    background-color: #00f7de;
+}
+
+/* 车辆信息表格 */
+.layui-table-cell {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 71px;
+    line-height: 28px;
+    padding: 6px 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+

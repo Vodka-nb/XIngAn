@@ -1,0 +1,63 @@
+body{
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 订车界面大盒子 */
+#OrderBox{
+    flex-direction: column;
+    align-items: center;
+    width: 1535px;
+    height: 1310px;
+    overflow: hidden ;
+}
+
+/* 车辆展示表格样式 */
+#CarDisplay{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1600px;
+    height: 1400px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
+
+#CarInfo  > tr >th{
+    width: 100px;
+    height: 80px;
+}
+/* 图片样式 */
+#CarImg{
+    display: inline-flex;
+    width: 100px;
+   
+}
+
+/* 车辆信息表格 */
+.layui-table-cell {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 71px;
+    line-height: 28px;
+    padding: 6px 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* 车辆图片样式 */
+.CarImg{
+    display:inline-flex;
+    width: 50px;
+    height: 50px;
+}

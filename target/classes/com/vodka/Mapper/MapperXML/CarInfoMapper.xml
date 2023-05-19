@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.CarInfoMapper">
+
+    <!--    修改车辆表  -->
+    <update id="EditCarInfo" >
+        Update carinfo
+        set  carType =  #{carType} , carBrand = #{carBrand }, carSize = #{carSize} , purchaseDate =  #{purchaseDate} ,
+             purchasePrice = #{purchasePrice}, carDetail = #{carDetail} , remark = #{remark} , imgUrl = #{imgUrl}, rentWay = #{rentWay}, rentPrice = #{rentPrice}
+        where carSign = #{carSign}
+    </update>
+
+    <!--  根据车牌号删除车辆信息  -->
+    <delete id="DeleteCarInfo" >
+        delete from carinfo
+        where carSign = #{carSign}
+    </delete>
+
+    <!--  添加车辆信息  -->
+    <insert id="AddCarInfo" parameterType="com.vodka.PJO.CarInfo" >
+        insert  into  carinfo
+          (carType ,carBrand , carSign, carSize, purchaseDate, purchasePrice, carDetail , remark , imgUrl,rentWay,rentPrice)
+        values(#{carType} ,#{carBrand }, #{carSign}, #{carSize} , #{purchaseDate} ,#{purchasePrice}, #{carDetail} , #{remark} , #{imgUrl},#{rentWay},#{rentPrice})
+    </insert>
+
+    <!--车辆全部信息-->
+    <select id="GetAllCar" resultType="com.vodka.PJO.CarInfo" flushCache="true">
+          select  * from carinfo
+    </select>
+
+    <!--查询车辆-->
+    <select id="SearchCarInfo" resultType="com.vodka.PJO.CarInfo" flushCache="true" >
+        select * from carinfo
+        where carSign = #{carSign}
+    </select>
+
+    <select id="SearchCarInfoByCondition" resultType="com.vodka.PJO.CarInfo" flushCache="true" >
+        select  * from carinfo
+        where carSign = #{carSign} or carType = #{carType} or remark = #{remark}
+    </select>
+
+
+</mapper>

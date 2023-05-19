@@ -1,0 +1,40 @@
+body{
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  /* 租车管理大盒子 */
+  #ReturnCarProcessingBox{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1435px;
+    height: 810px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden ;
+  }
+  
+  /* 车辆信息表格 */
+  .layui-table-cell {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 71px;
+    line-height: 28px;
+    padding: 6px 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  #ProcessPage{
+
+    display:none;
+  }

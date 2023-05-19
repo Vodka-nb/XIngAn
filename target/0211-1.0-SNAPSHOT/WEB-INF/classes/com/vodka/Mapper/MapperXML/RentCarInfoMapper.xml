@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.RentCarInfoMapper" >
+    <insert id="AddRentCarInfo" parameterType="com.vodka.PJO.RentCarInfo" flushCache="true" >
+        insert  into rentcarinfo
+        ( rentId , customerAccount, rentCarDate , predictReturnDate ,operator, remark ,rentCarAddress ,
+         deposit  , rentMoney,carSign)
+        values(#{RentId} , #{CustomerAccount}, #{RentCarDate} , #{PredictReturnDate} ,#{Operator}, #{Remark} ,#{RentCarAddress} ,
+         #{Deposit}  , #{RentMoney},#{carSign})
+    </insert>
+    
+    <update id="EditRentCarInfo" parameterType="com.vodka.PJO.RentCarInfo" flushCache="true">
+        Update rentcarinfo
+        set customerAccount = #{CustomerAccount}, rentCarDate = #{RentCarDate} ,predictReturnDate= #{PredictReturnDate} ,
+        operator = #{Operator}, remark = #{Remark} ,rentCarAddress = #{RentCarAddress} ,
+         deposit= #{Deposit}  , rentMoney = #{RentMoney}, carSign = #{carSign}
+        where rentId = #{RentId}
+    </update>
+    
+    <delete id="DeleteRentCarInfo" flushCache="true">
+        delete from rentcarinfo
+        where rentId = #{RentId}
+    </delete>
+
+
+    <select id="GetAllRentCar" resultType="com.vodka.PJO.RentCarInfo" flushCache="true" >
+           select * from rentcarinfo
+    </select>
+    
+    <select id="SearchRentCarInfo" resultType="com.vodka.PJO.RentCarInfo" flushCache="true"  >
+         select * from rentcarinfo
+         where rentId = #{RentID}
+    </select>
+
+<!--    根据顾客账号，搜索对应的租车列表-->
+    <select id="GetCustomerRentList" resultType="com.vodka.PJO.RentCarInfo" parameterType="com.vodka.PJO.RentCarInfo" flushCache="true" >
+         select * from rentcarinfo
+         where customerAccount = #{customerAccount}
+    </select>
+
+</mapper>
+

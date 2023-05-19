@@ -1,0 +1,90 @@
+body{
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 头部搜索栏 */
+#SearchBar{
+    display: inline-flex;
+    width: 1450px;
+    height: 80px;
+}
+
+ /*数据表*/
+.layui-table-box {
+    position: relative;
+    overflow: hidden;
+    width: 1450px;
+    height: 600px;
+    margin-top: 10px;
+     margin-left: 10px;
+}
+
+/*头部工具栏*/
+.layui-table-tool {
+    position: relative;
+    z-index: 890;
+    width: 1330px;
+    min-height: 50px;
+    line-height: 30px;
+    padding: 10px 15px;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+/* 图片样式 */
+
+/* 车辆图片样式 */
+.CarImg{
+    display:inline-flex;
+    width: 50px;
+    height: 50px;
+}
+
+/* 操作按钮样式 */
+.layui-table-cell > a  {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center; 
+    width:10px; 
+    height:20px;
+}
+
+.layui-table-cell > a:hover {
+   color:rgba(0, 0, 0, 0.994);
+}
+
+/* 数据表行内块 */
+.layui-table-cell{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    height:66px;
+
+}
+
+/*图片上传样式*/
+#uploadImg{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height: 60px;
+    margin-left: 160px;
+}
+
+#submitButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width:50px;
+    height: 20px;
+    margin-left: 190px;
+}
+
+#AddCar{
+    display: none;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.ReturnCarInfoMapper">
+    <insert id="AddReturnCarInfo" parameterType="com.vodka.PJO.ReturnCarInfo" >
+            insert  into returnCarInfo
+        (returnId ,rentId , evaluateCar , returnCarAddress,rentMoney,  penaltyMoney, acctuallyReturnCarTime , operatorId)
+        values (#{ReturnId} ,#{RentId} , #{EvaluateCar} , #{ReturnCarAddress},#{RentMoney},  #{PenaltyMoney}, #{AcctuallyReturnCarTime} , #{OperatorId})
+    </insert>
+
+    <update id="EditReturnCarInfo" parameterType="com.vodka.PJO.ReturnCarInfo" >
+         Update  returnCarInfo
+         set  returnId = #{ReturnId}, rentId = #{RentId} ,evaluateCar = #{EvaluateCar} ,returnCarAddress = #{ReturnCarAddress},rentMoney= #{RentMoney},  penaltyMoney=  #{PenaltyMoney},
+         acctuallyReturnCarTime = #{AcctuallyReturnCarTime} ,operatorId = #{OperatorId}
+        where returnId = #{ReturnId}
+    </update>
+
+    <update id="CustomerReturnCarProcess" parameterType="com.vodka.PJO.ReturnCarInfo" >
+          Update  returnCarInfo
+         set   returnCarAddress = #{ReturnCarAddress} ,acctuallyReturnCarTime = #{AcctuallyReturnCarTime}
+        where returnId = #{ReturnId}
+    </update>
+
+
+    <delete id="DeleteReturnCarInfo" parameterType="com.vodka.PJO.ReturnCarInfo" >
+         delete from returnCarInfo
+         where returnId = #{ReturnId}
+    </delete>
+
+    <delete id="DeleteReturnCarInfoByRentId" parameterType="com.vodka.PJO.ReturnCarInfo">
+         delete from returnCarInfo
+         where rentId = #{RentId}
+    </delete>
+
+    <select id="getAllReturnCarInfo" resultType="com.vodka.PJO.ReturnCarInfo" flushCache="true" >
+          select * from returnCarInfo
+    </select>
+
+    <select id="SearchReturnCarInfo" resultType="com.vodka.PJO.ReturnCarInfo" flushCache="true" >
+           select * from returnCarInfo
+            where returnId = #{ReturnId}
+    </select>
+
+    <select id="getUserReturnCarInfo" resultType="com.vodka.PJO.ReturnCarInfo" flushCache="true">
+         select * from returnCarInfo
+            where rentId = #{UserRentId}
+    </select>
+</mapper>

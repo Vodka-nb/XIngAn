@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.CustomerInfoMapper">
+
+    <update id="EditCustomerPassWord" parameterType="com.vodka.PJO.CustomerInfo"  >
+         Update customerinfo
+        set passWord = #{passWord}
+        where customerId =#{customerID}
+    </update>
+
+
+    <insert id="AddCustomerInfo" parameterType="com.vodka.PJO.CustomerInfo" >
+        insert  into customerinfo
+        (CustomerID,RealName,IdCardType,IdCardNum,Phone,Address,PassWord)
+        values(#{CustomerID},#{RealName},#{IDCardType},#{IDCardNum},#{Phone},#{Address},#{PassWord})
+    </insert>
+
+    <update id="EditCustomerInfo" parameterType="com.vodka.PJO.CustomerInfo" >
+        Update customerinfo
+        set  realName = #{RealName}, idCardType =  #{IDCardType} ,
+           idCardNum =  #{IDCardNum}  , phone = #{Phone} , address = #{Address}
+        where customerID = #{CustomerID}
+    </update>
+
+    <delete id="DeleteCustomerInfo" >
+        delete  from customerinfo
+        where customerID = #{CustomerID} or phone = #{Phone}
+    </delete>
+
+    <select id="GetAllCustomer" resultType="com.vodka.PJO.CustomerInfo" flushCache="true">
+           select * from customerinfo
+    </select>
+
+    <select id="SearchCustomerInfo" resultType="com.vodka.PJO.CustomerInfo" flushCache="true" >
+             select * from customerinfo
+             where customerID = #{CustomerNum} or phone = #{CustomerNum}
+    </select>
+
+    <select id="ThroughNameToFindCustomer" resultType="com.vodka.PJO.CustomerInfo" flushCache="true" >
+         select * from customerinfo
+         where realName = #{CustomerName}
+    </select>
+
+    <select id="GetCustomerByCondition" resultType="com.vodka.PJO.CustomerInfo">
+         select * from customerinfo
+         where realName = #{realName} or customerId = #{CustomerID}
+    </select>
+</mapper>
+

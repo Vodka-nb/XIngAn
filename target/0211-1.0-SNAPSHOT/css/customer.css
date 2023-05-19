@@ -1,0 +1,156 @@
+body{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 系统标题样式 */
+#Head{
+    display:flex;
+    flex-direction: row;
+}
+
+/* 首部功能栏 */
+.layui-layout-admin .layui-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2de8d6d9;
+}
+/* 左侧边栏 */
+.layui-nav-tree {
+    background-color: #2de8d6d9;
+    width: 200px;
+    padding: 0;
+}
+
+#LeftBar{
+    background-color:#2de8d6d9;
+}
+
+/* 功能栏悬浮字体颜色 */
+.layui-nav-item>a:hover{
+    color: rgb(126, 222, 244);
+}
+
+.main_left{
+    width: 150px;
+    height: 100%;
+    float:left;
+    background:#c0c0c0;
+    cursor:pointer;
+}
+
+.layui-side-scroll {
+    position: relative;
+    width: 220px;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #2de8d6d9;
+}
+
+/* 信息侧边栏字体颜色 */
+#RentFunction{
+    color: white;
+}
+#RentCar{
+    color: white;
+}
+#ReturnCar{
+    color: white;
+}
+
+#RentOrder{
+    color: white;
+}
+
+#BillingDetails{
+    color:white;
+}
+
+#RentFunction:hover{
+    cursor:pointer;
+    color: black;
+}
+
+#ReviewFunction:hover{
+    cursor:pointer;
+    color: black;
+}
+
+#ReviewPage:hover{
+    cursor:pointer;
+    color: black;
+}
+
+
+#RentCar:hover{
+    cursor:pointer;
+    color: black;
+}
+#ReturnCar:hover{
+    cursor:pointer;
+    color: black;
+}
+
+#BillingDetails:hover{
+    cursor:pointer;
+    color: black;
+}
+
+#RentOrder:hover{
+    cursor:pointer;
+    color: black;
+}
+
+
+
+/* 顾客界面logo */
+#CustomerTitle{
+    color: white;
+    background-color:#2de8d6d9;
+}
+
+/* 行安样式 */
+#Title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    font-size: 30px;
+    font-family: 宋体;
+    color: rgb(57, 61, 62);
+    text-shadow: 2px 2px rgba(202, 191, 191, 0.558);
+}
+/* 账号展示 */
+#AccountDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 60px;
+    margin-left: -180px;
+    font-size: 18px;
+}
+
+
+/*  账单明细 */
+#BillingDetails{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    background-color: #2de8d6d9;
+ }
+
+/*隐藏修改表单*/
+#ProfilePage{
+   display: none;
+}

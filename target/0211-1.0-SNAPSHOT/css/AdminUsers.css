@@ -1,0 +1,23 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+.ContentBox{
+    display: flex;
+    width:1335px; 
+    height:700px;
+    background-color: rgb(196, 243, 76);
+}
+
+/* 数据表行内块 */
+.layui-table-cell{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    height:66px;
+    width: 160px;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.SuperInfoMapper">
+    <!--    修改管理员表  -->
+    <update id="EditAdminInfo">
+        Update superinfo
+        set nickName = #{nickName}, gender = #{gender}, remark = #{remark},phone = #{phone}
+        where superAccount =#{account}
+    </update>
+
+    <update id="EditAdminPassWord" parameterType="com.vodka.PJO.SuperInfo">
+        Update superinfo
+        set passWord = #{passWord}
+        where superAccount =#{superAccount}
+    </update>
+
+
+    <!--  删除管理员信息  -->
+    <delete id="DeleteAdminInfo" parameterType="com.vodka.PJO.SuperInfo">
+        delete from superinfo
+        where phone = #{phone} or superAccount = #{superAccount}
+    </delete>
+
+    <!--  添加管理员信息  -->
+    <insert id="AddAdminInfo" parameterType="com.vodka.PJO.SuperInfo" >
+        insert  into  superinfo
+          (superAccount ,nickName , phone,gender,remark,passWord)
+        values(#{superAccount},#{nickName}, #{phone},#{gender},#{remark},#{passWord})
+    </insert>
+
+    <!--管理员全体信息-->
+    <select id="GetAllSuper" resultType="com.vodka.PJO.SuperInfo" flushCache="true" >
+          select  * from superinfo
+    </select>
+
+    <!--查询管理员-->
+    <select id="SearchAdminInfo" resultType="com.vodka.PJO.SuperInfo" flushCache="true" >
+        select * from superinfo
+        where phone = #{Num} or superAccount = #{Num}
+    </select>
+
+</mapper>

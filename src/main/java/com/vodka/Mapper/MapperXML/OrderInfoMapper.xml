@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.OrderInfoMapper">
+    <insert id="AddOrderInfo" parameterType="com.vodka.PJO.OrderInfo">
+        insert  into orderinfo
+        (returnId,PayMethod,orderMoney,payTime)
+        values(#{returnId},#{PayMethod},#{orderMoney},#{payTime})
+    </insert>
+
+    <update id="EditOrderInfo" parameterType="com.vodka.PJO.OrderInfo" >
+        Update orderinfo
+        set  payMethod = #{payMethod}, orderMoney =  #{orderMoney} ,
+           payTime =  #{payTime}
+        where orderId = #{orderId}
+    </update>
+
+    <delete id="DeleteOrderInfo" parameterType="com.vodka.PJO.OrderInfo">
+        delete from orderinfo
+        where orderId = #{OrderId}
+    </delete>
+
+
+    <select id="GetAllOrder" resultType="com.vodka.PJO.OrderInfo" flushCache="true" >
+        select * from orderinfo
+    </select>
+
+    <select id="SearchOrderInfo" resultType="com.vodka.PJO.OrderInfo" flushCache="true" >
+        select * from orderinfo
+        where orderId = #{OrderId}
+    </select>
+
+    <select id="SearchOrderInfoByOtherId" resultType="com.vodka.PJO.OrderInfo"  flushCache="true" >
+        select * from orderinfo
+        where returnId = #{OtherId}
+    </select>
+
+    <select id="SearchOrderInfoByCondition" resultType="com.vodka.PJO.OrderInfo">
+        select  * from orderinfo
+        where orderId = #{param1} or returnId = #{param2} or payMethod = #{param3}
+    </select>
+
+    <select id="getOrderInfoByReturnId" resultType="com.vodka.PJO.OrderInfo">
+         select  * from orderinfo
+        where returnId = #{returnId}
+    </select>
+
+</mapper>

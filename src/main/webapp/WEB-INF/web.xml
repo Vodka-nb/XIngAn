@@ -1,0 +1,34 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>GraduationDesign</display-name>
+  <!--  部署 DispatcherServlet  -->
+  <servlet>
+    <!--     调度器  -->
+    <servlet-name>RentCar</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--      环境初始变量 -->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring-config.xml</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+
+    <init-param>
+       <param-name>encoding</param-name>
+       <param-value>utf-8</param-value>
+     </init-param>
+
+    <!--  表示容器再启动时立即加载servlet  -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RentCar</servlet-name>
+    <!--  处理所有URL  -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+</web-app>

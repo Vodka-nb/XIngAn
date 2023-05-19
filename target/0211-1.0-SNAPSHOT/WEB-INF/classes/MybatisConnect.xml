@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF8"?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 二级缓存关闭 -->
+        <setting name="cacheEnabled" value="false" />
+        <!-- 设置本地缓存范围 session:就会有数据的共享  statement:语句范围 (这样就不会有数据的共享 ) defalut:session -->
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/rentcar?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="vodka"/>
+                <property name="password" value="lwj888888"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--    接口映射-->
+    <mappers>
+        <mapper resource="com/vodka/Mapper/MapperXML/CarInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/CustomerCommentInfoMapper.xml" />
+        <mapper resource="com/vodka/Mapper/MapperXML/ReturnCarInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/CustomerInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/OrderInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/RentCarInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/ServerInfoMapper.xml"/>
+        <mapper resource="com/vodka/Mapper/MapperXML/SuperInfoMapper.xml"/>
+    </mappers>
+
+
+</configuration>
+
+

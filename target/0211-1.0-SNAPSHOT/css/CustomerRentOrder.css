@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 租车信息表格 */
+.layui-table-cell {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 71px;
+    line-height: 28px;
+    padding: 6px 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}

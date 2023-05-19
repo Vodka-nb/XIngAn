@@ -1,0 +1,152 @@
+body{
+    overflow: hidden ;
+    padding: 0px;
+    margin-top: 156px;
+}
+
+/* 展示区 */
+#Display_box {
+    width: 1500px;
+    height: 700px;
+    overflow: hidden ;
+}
+
+
+
+/* 首部功能栏 */
+.layui-layout-admin .layui-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2de8d6d9;
+}
+/* 侧边栏 */
+.layui-nav-tree {
+    background-color: #2de8d6d9;
+    width: 200px;
+    padding: 0;
+}
+/* 管理界面logo */
+#RenYuanTitle{
+    color: white;
+    background-color:#2de8d6d9;
+}
+
+#LeftBar{
+    background-color:#2de8d6d9;
+}
+.main_left{
+    width: 150px;
+    height: 100%;
+    float:left;
+    background:#c0c0c0;
+    cursor:pointer;
+}
+
+/* 功能栏悬浮字体颜色 */
+.layui-nav-item>a:hover{
+     color:rgb(126, 222, 244);
+}
+/* 账号展示 */
+#AccountDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 60px;
+    margin-left: -77px;
+    font-size: 18px;
+}
+
+
+
+/* 信息侧边栏字体颜色 */
+#AdminInfo{
+    color: white;
+}
+#CarInfo{
+    color: white;
+}
+#ServerInfo{
+    color: white;
+}
+#CustomerInfo{
+    color: white;
+}
+
+#AdminInfo:hover{
+    color: black;
+}
+#CarInfo:hover{
+    color: black;
+}
+#ServerInfo:hover{
+    color: black;
+}
+#CustomerInfo:hover{
+    color: black;
+}
+
+
+
+#Info{
+    color: white;
+}
+
+.layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    color: black;
+}
+
+/* 系统标题样式 */
+#Head{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* 行安样式 */
+#AdminTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    font-size: 30px;
+    font-family: 宋体;
+    color: aliceblue;
+    text-shadow: 2px 2px rgba(202, 191, 191, 0.558);
+}
+
+/* 添加管理员，服务员，车辆 */
+#AddSuper{
+    display: none;
+}
+#AddServer{ 
+    display: none;
+}
+#AddCar{
+    display: none;
+}
+
+/*賬號*/
+#AccountDisplay{
+
+    display: flex;
+    flex-direction: row;
+    width:200px;
+    height: 100%;
+
+}
+
+#SuperName{
+    display: flex;
+    flex-direction: row;
+    width:70px;
+    height: 50px;
+}
+
+#ProfilePage{
+    display: none;
+}

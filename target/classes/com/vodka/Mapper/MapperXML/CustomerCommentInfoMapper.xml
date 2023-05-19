@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vodka.Mapper.CustomerCommentInfoMapper" >
+    <insert id="AddCustomerCommentInfo" >
+           insert  into customercommentinfo
+        (customerAccount, orderId, content, commentTime ,adminAccount,status)
+        values (#{CustomerAccount} ,#{OrderId},#{Content},#{CommentTime},#{AdminAccount},#{Status})
+    </insert>
+
+    <update id="EditCustomerCommentInfo" parameterType="com.vodka.PJO.CustomerCommentInfo">
+         Update customercommentinfo
+        set   content = #{Content}, commentTime = #{CommentTime} ,adminAccount = #{AdminAccount},status = #{Status}
+        where orderId = #{OrderId}
+    </update>
+
+    <delete id="DeleteCustomerCommentInfo" parameterType="com.vodka.PJO.CustomerCommentInfo">
+        delete from customercommentinfo
+        where content = #{Content}
+    </delete>
+
+
+    <select id="SearchCustomerCommentInfo" resultType="com.vodka.PJO.CustomerCommentInfo" flushCache="true" >
+        select * from customercommentinfo
+        where  customerAccount = #{CustomerAccount}
+    </select>
+
+    <select id="getAllCommentInfo" resultType="com.vodka.PJO.CustomerCommentInfo" flushCache="true" >
+        select * from customercommentinfo
+        where Status = #{Status}
+    </select>
+
+    <select id="UnThroughCommentInfo" resultType="com.vodka.PJO.CustomerCommentInfo" parameterType="com.vodka.PJO.CustomerCommentInfo">
+         select * from customercommentinfo
+         where Status = #{Status}
+    </select>
+
+    <select id="SearchCustomerCommentInfoByOrderId" resultType="com.vodka.PJO.CustomerCommentInfo">
+        select * from customercommentinfo
+         where orderId = #{OrderId}
+    </select>
+
+</mapper>

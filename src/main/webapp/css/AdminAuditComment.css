@@ -1,0 +1,21 @@
+body{
+    align-items: center;
+    overflow: hidden ;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 操作按钮样式 */
+.layui-table-cell{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#AuditBox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 50px;
+    margin-top: 50px;
+}

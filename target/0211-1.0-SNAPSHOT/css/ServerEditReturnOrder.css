@@ -1,0 +1,55 @@
+body{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden ;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* 订购表单 */
+#ReturnOrderProcess{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 600px;
+  background-color: rgb(198, 241, 245);
+  overflow: hidden ;
+}
+
+/* 租还车地点 */
+.layui-form-select .layui-input {
+  padding-right: 127px;
+  
+  cursor: pointer;
+}
+
+#Penalty{    
+  width: 312px;
+  margin-left: -106px;
+}
+
+#EvaluateCar{    
+  width: 312px;
+  margin-left: -106px;
+}
+
+.layui-btn {
+  display: inline-block;
+  vertical-align: middle;
+  height: 38px;
+  line-height: 38px;
+  border: 1px solid transparent;
+  padding: 0 18px;
+  background-color: #009688;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 142px;
+  border-radius: 2px;
+  cursor: pointer;
+
+}
